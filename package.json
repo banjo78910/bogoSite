@@ -1,0 +1,23 @@
+{
+  "name": "bogo-site",
+  "version": "0.0.1",
+  "description": "Personal site Sara Bogomolny",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/banjo78910/bogoSite.git"
+  },
+  "author": "Ben Ratner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banjo78910/bogoSite/issues"
+  },
+  "homepage": "https://github.com/banjo78910/bogoSite#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
+  }
+}
