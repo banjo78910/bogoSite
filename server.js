@@ -15,7 +15,6 @@ app.set('view engine', 'handlebars');
 app.use(express.static('static'));
 
 app.get('/', function(req, res) {
-    console.log(req.params);
     res.render('index');
 });
 
@@ -23,7 +22,13 @@ app.get('/Bio', function(req, res) {
     res.render('Bio');
 });
 app.get('/Gallery', function(req, res) {
-    res.render('Gallery');
+    fs.readdir("static/img", function(err, files) {
+        res.render('Gallery', {
+            "images": files
+        });
+        console.log(files);
+    });
+
 });
 app.get('/Resume', function(req, res) {
     res.render('Resume');
