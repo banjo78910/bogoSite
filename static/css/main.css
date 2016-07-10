@@ -44,5 +44,10 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 1000px;
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
 }

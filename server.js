@@ -22,11 +22,13 @@ app.get('/Bio', function(req, res) {
     res.render('Bio');
 });
 app.get('/Gallery', function(req, res) {
-    fs.readdir("static/img", function(err, files) {
-        res.render('Gallery', {
-            "images": files
+    var imgObj = {};
+    fs.readdir("static/img/carousel", function(err, files) {
+        imgObj.carousel = files;
+        fs.readdir("static/img/thumbs", function(err, files) {
+            imgObj.thumbs = files;
+            res.render('Gallery', imgObj);
         });
-        console.log(files);
     });
 
 });
