@@ -2,6 +2,7 @@
 var http = require('http'),
     express = require('express'),
     exphbs = require('express-handlebars'),
+    dir = require('node-dir'),
     fs = require('fs');
 var app = express();
 //Lets define a port we want to listen to
@@ -22,13 +23,10 @@ app.get('/Bio', function(req, res) {
     res.render('Bio');
 });
 app.get('/Gallery', function(req, res) {
-    var imgObj = {};
-    fs.readdir("static/img/carousel", function(err, files) {
-        imgObj.carousel = files;
-        fs.readdir("static/img/thumbs", function(err, files) {
-            imgObj.thumbs = files;
-            res.render('Gallery', imgObj);
-        });
+
+    subdirsPromise("static/img/gallery").then(filesPromise).then(function(data) {
+        console.log(data);
+        res.render('Gallery', data);
     });
 
 });
@@ -45,3 +43,58 @@ app.get('/Contact', function(req, res) {
 app.listen(PORT, function() {
     console.log('Listening on port ' + PORT);
 });
+
+function subdirsPromise(path) {
+    promise = new Promise(function(resolve, reject) {
+        dir.subdirs(path, function(err, data) {
+            resolve(data);
+        });
+    });
+
+    return promise;
+}
+
+function filesPromise(dirs) {
+    promise = new Promise(function(resolve, reject) {
+        var imgObj = {};
+        imgObj.galleries = [];
+
+        for (var folder in dirs) {
+            var JSONData;
+            dir.files(dirs[folder], function(err, files) {
+                console.log("dir: " + dirs[folder]);
+
+                var images = files.filter(function(file) {
+                    return file.indexOf('.jpg' || '.png' || '.gif') !== -1;
+                });
+                for (var img in images) {
+                    images[img] = images[img].substring(6);
+                }
+                console.log(images);
+
+                var JSONPath = files.filter(function(file) {
+                    return file.indexOf('.json') !== -1;
+                })[0];
+                filePromise = new Promise(function(resolve, reject) {
+                    fs.readFile(JSONPath + '', function(err, data) {
+                        JSONData = JSON.parse(data);
+                        var galObj = {};
+                        galObj.name = JSONData.name;
+                        galObj.text = JSONData.text;
+                        galObj.images = images;
+                        resolve(galObj);
+
+                    });
+                });
+                filePromise.then(function(data) {
+                    imgObj.galleries.push(data);
+                    resolve(imgObj);
+
+                });
+
+            });
+        }
+    });
+
+    return promise;
+}

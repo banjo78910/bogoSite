@@ -18,6 +18,7 @@
   "homepage": "https://github.com/banjo78910/bogoSite#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "node-dir": "^0.1.15"
   }
 }

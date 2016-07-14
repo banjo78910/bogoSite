@@ -1,0 +1,59 @@
+@mixin bg-size($size) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    color: black;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    ul {
+        padding-top: 5px;
+        color: #000;
+    }
+    .nav > li > a {
+        color: #FFF;
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+.galleria {
+    width: 700px;
+    height: 400px;
+    background: #000;
+}
+
+.navbar-brand {
+    color: #FFF;
+}
+
+.name-box {
+    font: {
+        family: 'Zapfino';
+        size: 5rem;
+    }
+    text-align: center;
+    color: #FFF;
+}
+
+.spacer-100 {
+    height: 100px;
+}
+
+.hero {
+    height: 100%;
+    background: url(../img/hero.jpg) no-repeat center center;
+    @include bg-size(cover);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}

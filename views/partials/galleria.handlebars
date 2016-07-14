@@ -1,6 +1,16 @@
-<div class="galleria">
-    {{#each carousel}}
-        <img class="img-responsive center-block" src="img/carousel/{{this}}">
+<div class="gal-holder">
+    {{#each galleries}}
+        <div class="gal-title">
+            <h2>{{name}}</h2>
+        </div>
+        <div class="galleria" id="index">
+            {{#each this.images}}
+                <img class="img-responsive center-block" src= {{this}}>
+            {{/each}}
+        </div>
+        <div class="gal-text">
+            {{this.text}}
+        </div>
     {{/each}}
 </div>
 <script>
