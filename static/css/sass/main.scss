@@ -5,6 +5,12 @@
     background-size: $size;
 }
 
+$name-font: 'Cherry Swash',
+cursive;
+$par-font: 'Josefin Slab',
+serif;
+$title-font: 'Flamenco',
+cursive;
 .navbar {
     position: relative;
     width: 100%;
@@ -12,6 +18,10 @@
     border: none;
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    font: {
+        family: $title-font;
+        size: 2rem;
+    }
     ul {
         padding-top: 5px;
         color: #000;
@@ -25,8 +35,8 @@
 }
 
 .galleria {
-    width: 700px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background: #000;
 }
 
@@ -37,13 +47,13 @@
 .name-box {
     .name {
         font: {
-            family: 'Zapfino';
+            family: $name-font;
             size: 5rem;
         }
     }
     .byline {
         font: {
-            family: 'sans-serif';
+            family: $title-font;
             size: 2rem;
         }
     }

@@ -8,9 +8,33 @@ var app = express();
 //Lets define a port we want to listen to
 const PORT = 3005;
 
+var hbs = exphbs.create({
+    helpers: {
+        grouped_each: function(every, context, options) {
+            var out = "",
+                subcontext = [],
+                i;
+            if (context && context.length > 0) {
+                for (i = 0; i < context.length; i++) {
+                    if (i > 0 && i % every === 0) {
+                        out += options.fn(subcontext);
+                        subcontext = [];
+                    }
+                    subcontext.push(context[i]);
+                }
+                out += options.fn(subcontext);
+            }
+            return out;
+        }
+    },
+    defaultLayout: 'main'
+});
+
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
+app.engine('handlebars', hbs.engine);
+
 app.set('view engine', 'handlebars');
 
 app.use(express.static('static'));
@@ -28,7 +52,6 @@ app.get('/Gallery', function(req, res) {
         console.log(data);
         res.render('Gallery', data);
     });
-
 });
 app.get('/Resume', function(req, res) {
     res.render('Resume');
