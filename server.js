@@ -6,7 +6,7 @@ var http = require('http'),
     fs = require('fs');
 var app = express();
 //Lets define a port we want to listen to
-const PORT = 3005;
+const PORT = (process.env.PORT || 3005);
 
 var hbs = exphbs.create({
     helpers: {
