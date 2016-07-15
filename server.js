@@ -40,7 +40,9 @@ app.set('view engine', 'handlebars');
 app.use(express.static('static'));
 
 app.get('/', function(req, res) {
-    res.render('index');
+    res.render('index', {
+        layout: 'index'
+    });
 });
 
 app.get('/Bio', function(req, res) {

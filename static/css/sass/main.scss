@@ -28,6 +28,8 @@ cursive;
     }
     .nav > li > a {
         color: #FFF;
+        padding-top: 5px;
+        padding-bottom: 5px;
         &:hover {
             color: #000;
         }
@@ -35,9 +37,23 @@ cursive;
 }
 
 .galleria {
-    width: 350px;
+    width: 100%;
     height: 350px;
     background: #000;
+}
+
+.gal-instance {
+    margin-left: 5.5%;
+}
+
+.gal-text {
+    font-family: $par-font;
+    text-align: center;
+}
+
+.gal-title {
+    font-family: $title-font;
+    text-align: center;
 }
 
 .navbar-brand {

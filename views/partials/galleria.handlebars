@@ -1,10 +1,8 @@
-<script>
-</script>
 <div class="gal-holder">
     {{#grouped_each 2 galleries}}
         <div class="row">
             {{#each this}}
-                <div class="col-md-4 col-md-offset-1">
+                <div class="col-md-5 gal-instance">
                     <div class="gal-title">
                         <h2>{{name}}</h2>
                     </div>
@@ -23,16 +21,9 @@
 </div>
 <script>
 Galleria.loadTheme('lib/galleria/themes/classic/galleria.classic.min.js');
-Galleria.run('.galleria');
+Galleria.run('.galleria', {
+    showCounter: false,
+    lightbox: true,
+    swipe: true,
+});
 </script>
-<div class="container">
-    {{#grouped_each 3 books}}
-        <div class="row">
-            {{#each this }}
-                <div class="span4 book" data-isbn="{{ isbn }}">
-                    <strong>{{ name }}</strong>
-                </div>
-            {{/each}}
-        </div>
-    {{/grouped_each}}
-</div>
