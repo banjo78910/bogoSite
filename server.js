@@ -5,8 +5,8 @@ var http = require('http'),
     dir = require('node-dir'),
     fs = require('fs');
 var app = express();
-//Lets define a port we want to listen to
-const PORT = (process.env.PORT || 3005);
+
+const PORT = process.env.PORT || 3005;
 
 var hbs = exphbs.create({
     helpers: {
@@ -46,7 +46,17 @@ app.get('/', function(req, res) {
 });
 
 app.get('/Bio', function(req, res) {
-    res.render('Bio');
+    dir.files("static/img/bio", function(err, files) {
+        var images = {};
+
+        for (var img in files) {
+            files[img] = files[img].substring(6);
+            images.carousel = files;
+        }
+        res.render('Bio', images);
+
+    });
+
 });
 app.get('/Gallery', function(req, res) {
 
@@ -62,7 +72,14 @@ app.get('/News', function(req, res) {
     res.render('News');
 });
 app.get('/Contact', function(req, res) {
-    res.render('Contact');
+    fs.readFile("static/img/contact/contact.json", function(err, data) {
+        console.log(data);
+        console.log(err);
+        var json = JSON.parse(data);
+        res.render('Contact', json);
+
+    });
+
 });
 
 app.listen(PORT, function() {

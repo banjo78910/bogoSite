@@ -1,0 +1,38 @@
+{
+    "profiles": {
+        "Facebook": {
+            "service": "facebook",
+            "url": "#",
+            "text": "Follow Sara on Facebook"
+        },
+        "instagram": {
+            "service": "instagram",
+            "url": "#",
+            "text": "Follow Sara on Instagram"
+        },
+        "Twitter": {
+            "service": "twitter",
+            "url": "#",
+            "text": "Follow Sara on Twitter"
+        },
+        "Snapchat": {
+            "service": "Snapchat",
+            "url": "#",
+            "text": "Add Sara on Snapchat",
+            "snapchat": true
+        },
+        "Youtube": {
+            "service": "youtube",
+            "url": "#",
+            "text": "Subscribe to Sara on YouTube",
+            "youtube": true
+
+        },
+        "Email": {
+            "service": "envelope",
+            "url": "#",
+            "text": "Send Sara an Email"
+        }
+    }
+
+}

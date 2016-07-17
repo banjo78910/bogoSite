@@ -5,12 +5,63 @@
     background-size: $size;
 }
 
+@mixin transition($props) {
+    transition: $props;
+    -moz-transition: $props;
+    -webkit-transition: $props;
+    -o-transition: $props;
+    -ms-transition: $props;
+}
+
+@mixin border-radius($props) {
+    border-radius: $props;
+    -moz-border-radius: $props;
+    -webkit-border-radius: $props;
+    -o-border-radius: $props;
+}
+
 $name-font: 'Cherry Swash',
 cursive;
 $par-font: 'Josefin Slab',
 serif;
 $title-font: 'Flamenco',
 cursive;
+$color-map: (facebook: #4060A5, twitter: #00ABE3, instagram: #375989, youtube: #FF1F25, youtube-play: #DF192A, envelope: #55FFDD, snapchat-ghost: #ECE100);
+@each $service,
+$color in $color-map {
+    .social .fa-#{$service}:hover {
+        background: $color;
+    }
+}
+
+
+/* Site */
+
+.spacer-100 {
+    height: 100px;
+}
+
+.spacer-25 {
+    height: 25px;
+}
+
+.body-panel {
+    width: 60%;
+}
+
+.content-text {
+    font-family: $par-font;
+    text-align: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Nav Bar */
+
 .navbar {
     position: relative;
     width: 100%;
@@ -36,6 +87,13 @@ cursive;
     }
 }
 
+.navbar-brand {
+    color: #FFF;
+}
+
+
+/*Gallery*/
+
 .galleria {
     width: 100%;
     height: 350px;
@@ -46,19 +104,13 @@ cursive;
     margin-left: 5.5%;
 }
 
-.gal-text {
-    font-family: $par-font;
-    text-align: center;
-}
-
 .gal-title {
     font-family: $title-font;
     text-align: center;
 }
 
-.navbar-brand {
-    color: #FFF;
-}
+
+/*Home*/
 
 .name-box {
     .name {
@@ -80,25 +132,64 @@ cursive;
     padding-top: 75px;
 }
 
-.spacer-100 {
-    height: 100px;
-}
-
-.spacer-25 {
-    height: 25px;
-}
-
 .hero {
     height: 100%;
     background: url(../img/hero.jpg) no-repeat center center;
     @include bg-size(cover);
 }
 
-.body-panel {
-    width: 60%;
+
+/* Bio */
+
+.bio-text {
+    padding: 10px 30px 10px 30px;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
+.car-holder {
+    padding-top: 10px;
 }
+
+
+/* contact */
+
+.social {
+    margin: 0;
+    padding: 0;
+    ul {
+        margin: 0;
+        padding: 5px;
+        li {
+            margin: 5px;
+            list-style: none outside none;
+            display: inline-block;
+        }
+    }
+    i {
+        width: 40px;
+        height: 40px;
+        color: #FFF;
+        background-color: #909AA0;
+        font-size: 22px;
+        text-align: center;
+        padding-top: 12px;
+        @include transition(all ease 0.3s);
+        @include border-radius(50%);
+        &:hover {
+            color: #FFF;
+            text-decoration: none;
+            @include transition(all ease 0.3s);
+        }
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+.social ul {}
+
+.social ul li {}
+
+.social i {}
+
+.social i:hover {}

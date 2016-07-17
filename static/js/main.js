@@ -11,4 +11,8 @@ $(document).ready(function() {
     $("#car-item-0").addClass("active");
     $("#car-ind-0").addClass("active");
 
+    $('.carousel').carousel({
+        interval: 5000,
+    });
+
 });

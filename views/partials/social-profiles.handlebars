@@ -1,0 +1,12 @@
+{{#each profile}}
+    <div class= {{service}}>
+        {{#if snapchat}}
+            <li><a href="{{url}}"><i class="fa fa-lg fa-snapchat-ghost"></i></a></li>
+        {{/if}}
+        {{#else if youtube}}
+            <li><a href="{{url}}"><i class="fa fa-lg fa-youtube-play"></i></a></li>
+            {{else}}
+                <li><a href="{{url}}"><i class="fa fa-lg fa-{{service}}"></i></a></li>
+                {{else}}
+    </div>
+{{/each}}

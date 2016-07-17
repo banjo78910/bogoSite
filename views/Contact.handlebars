@@ -1,2 +1,17 @@
-<div class="col-md-3 col-md-offset-1">Contact Coming soon!</div>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<div class="social">
+    <ul>
+        {{#each profiles}}
+            <div class="{{service}}">
+                {{#if snapchat}}
+                    <li><a href="{{url}}"><i class="fa fa-lg fa-snapchat-ghost"></i></a></li><a class="content-text" href="{{url}}">{{text}}</a>
+                    {{else if youtube}}
+                    <li><a href="{{url}}"><i class="fa fa-lg fa-youtube-play"></i></a></li><a class="content-text" href="{{url}}">{{text}}</a>
+                {{else}}
+                    <li><a href="{{url}}"><i class="fa fa-lg fa-{{service}}"></i></a></li><a class="content-text" href="{{url}}">{{text}}</a>
+                {{/if}}
+            </div>
+        {{/each}}
+    </ul>
+</div>
 </div>

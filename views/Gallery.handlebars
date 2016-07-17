@@ -1,19 +1,31 @@
-<!-- Indicators -->
-{{!-- <ol class="carousel-indicators">
-        {{>car-indicators}}
-</ol>
---}}
-<!-- Wrapper for slides -->
 <div class="page">
-    {{> galleria}}
+    <div class="gal-holder">
+        {{#grouped_each 2 galleries}}
+            <div class="row">
+                {{#each this}}
+                    <div class="col-md-5 gal-instance">
+                        <div class="gal-title">
+                            <h2>{{name}}</h2>
+                        </div>
+                        <div class="galleria" id="index">
+                            {{#each images}}
+                                <img class="img-responsive center-block" src= {{this}}>
+                            {{/each}}
+                        </div>
+                        <div class="gal-text">
+                            {{text}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/grouped_each}}
+    </div>
+    <script>
+    Galleria.loadTheme('lib/galleria/themes/classic/galleria.classic.min.js');
+    Galleria.run('.galleria', {
+        showCounter: false,
+        lightbox: true,
+        swipe: true,
+    });
+    </script>
 </div>
-<!-- Controls -->
-{{!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-     --}}

@@ -1,3 +1,43 @@
+.social .fa-facebook:hover {
+  background: #4060A5; }
+
+.social .fa-twitter:hover {
+  background: #00ABE3; }
+
+.social .fa-instagram:hover {
+  background: #375989; }
+
+.social .fa-youtube:hover {
+  background: #FF1F25; }
+
+.social .fa-youtube-play:hover {
+  background: #DF192A; }
+
+.social .fa-envelope:hover {
+  background: #55FFDD; }
+
+.social .fa-snapchat-ghost:hover {
+  background: #ECE100; }
+
+/* Site */
+.spacer-100 {
+  height: 100px; }
+
+.spacer-25 {
+  height: 25px; }
+
+.body-panel {
+  width: 60%; }
+
+.content-text {
+  font-family: "Josefin Slab", serif;
+  text-align: center; }
+
+body {
+  width: 100vw;
+  height: 100vh; }
+
+/* Nav Bar */
 .navbar {
   position: relative;
   width: 100%;
@@ -17,6 +57,10 @@
     .navbar .nav > li > a:hover {
       color: #000; }
 
+.navbar-brand {
+  color: #FFF; }
+
+/*Gallery*/
 .galleria {
   width: 100%;
   height: 350px;
@@ -25,17 +69,11 @@
 .gal-instance {
   margin-left: 5.5%; }
 
-.gal-text {
-  font-family: "Josefin Slab", serif;
-  text-align: center; }
-
 .gal-title {
   font-family: "Flamenco", cursive;
   text-align: center; }
 
-.navbar-brand {
-  color: #FFF; }
-
+/*Home*/
 .name-box {
   font-family: 'Zapfino';
   font-size: 5rem;
@@ -49,12 +87,6 @@
     font-family: "Flamenco", cursive;
     font-size: 2rem; }
 
-.spacer-100 {
-  height: 100px; }
-
-.spacer-25 {
-  height: 25px; }
-
 .hero {
   height: 100%;
   background: url(../img/hero.jpg) no-repeat center center;
@@ -63,9 +95,51 @@
   -o-background-size: cover;
   background-size: cover; }
 
-.body-panel {
-  width: 60%; }
+/* Bio */
+.bio-text {
+  padding: 10px 30px 10px 30px; }
 
-body {
-  width: 100vw;
-  height: 100vh; }
+.car-holder {
+  padding-top: 10px; }
+
+/* contact */
+.social {
+  margin: 0;
+  padding: 0; }
+  .social ul {
+    margin: 0;
+    padding: 5px; }
+    .social ul li {
+      margin: 5px;
+      list-style: none outside none;
+      display: inline-block; }
+  .social i {
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    background-color: #909AA0;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 12px;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%; }
+    .social i:hover {
+      color: #FFF;
+      text-decoration: none;
+      transition: all ease 0.3s;
+      -moz-transition: all ease 0.3s;
+      -webkit-transition: all ease 0.3s;
+      -o-transition: all ease 0.3s;
+      -ms-transition: all ease 0.3s; }
+  .social a {
+    color: #000;
+    text-decoration: none; }
+
+/*# sourceMappingURL=main.css.map */
