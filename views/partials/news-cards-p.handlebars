@@ -1,0 +1,11 @@
+<div class="news-cards row col-md-3 col-md-offset-1">
+    {{#each items}}
+        <div class="news-card news-card-{{@index}} panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{headline}}</h3>
+            </div>
+            <div class="panel-body">{{content}}</div>
+            <a href="#" title="read more" class="readmore"> Read more »</a>
+        </div>
+    {{/each}}
+</div>

@@ -10,6 +10,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- Galleria -->
     <script src="lib/galleria/galleria-1.4.2.min.js"></script>
+    {{!-- ellipsis plugin --}}
+    <script src="lib/jquery.dotdotdot.min.js"></script>
     {{!-- Google Fonts --}}
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Flamenco|Josefin+Slab|Sacramento" rel="stylesheet">
     <!-- custom -->
@@ -22,10 +24,14 @@
         <div class="navHolder">
             {{> nav}}
         </div>
-        <div class="name-box col-md-3 col-md-offset-1">
-            <div class="name">Sara Bogomolny</div>
-            <div class="byline">Actor | Director | Writer</div>
+        <div class="row">
+            <div class="name-box col-md-3 col-md-offset-1">
+                <div class="name">Sara Bogomolny</div>
+                <div class="byline">Actor | Director | Writer</div>
+                <div class="news-title">Sara in the News: </div>
+            </div>
         </div>
+        <div class="row">{{> news-cards-p}}</div>
     </div>
 </body>
 

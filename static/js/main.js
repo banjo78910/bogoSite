@@ -15,4 +15,11 @@ $(document).ready(function() {
         interval: 5000,
     });
 
+    $('.news-card').dotdotdot({
+        ellipsis: '...',
+        wrap: 'word',
+        after: 'a.readmore',
+
+    })
+
 });

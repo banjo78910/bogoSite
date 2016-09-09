@@ -4,14 +4,14 @@
         {{#each profiles}}
             <div class="{{service}}">
                 {{#if snapchat}}
-                    <li><a href="{{url}}"><i class="fa fa-lg fa-snapchat-ghost"></i></a></li><a class="content-text" href="{{url}}">{{text}}</a>
-                    {{else if youtube}}
+                    <li><a href="{{url}}"><i class="fa fa-lg fa-snapchat-ghost"></i></a></li><a class="content-text" href="{{url}}">{{text}}</a> {{else if youtube}}
                     <li><a href="{{url}}"><i class="fa fa-lg fa-youtube-play"></i></a></li><a class="content-text" href="{{url}}">{{text}}</a>
                 {{else}}
                     <li><a href="{{url}}"><i class="fa fa-lg fa-{{service}}"></i></a></li><a class="content-text" href="{{url}}">{{text}}</a>
                 {{/if}}
             </div>
         {{/each}}
+        <div class="news-cards">{{> news-cards}}</div>
     </ul>
 </div>
 </div>

@@ -40,9 +40,16 @@ app.set('view engine', 'handlebars');
 app.use(express.static('static'));
 
 app.get('/', function(req, res) {
-    res.render('index', {
-        layout: 'index'
+    fs.readFile("models/news/news.json", function(err, data) {
+
+        console.log(err);
+        var json = JSON.parse(data);
+        json["layout"] = "index";
+        console.log(json);
+        res.render('news-cards', json);
+
     });
+
 });
 
 app.get('/Bio', function(req, res) {
@@ -72,10 +79,10 @@ app.get('/News', function(req, res) {
     res.render('News');
 });
 app.get('/Contact', function(req, res) {
-    fs.readFile("static/img/contact/contact.json", function(err, data) {
-        console.log(data);
+    fs.readFile("models/contact/contact.json", function(err, data) {
         console.log(err);
         var json = JSON.parse(data);
+        console.log(json);
         res.render('Contact', json);
 
     });
