@@ -20,6 +20,25 @@
     -o-border-radius: $props;
 }
 
+@mixin translate($horiz, $vert) {
+    -webkit-transform: translate($horiz, $vert);
+    -moz-transform: translate($horiz, $vert);
+    -o-transform: translate($horiz, $vert);
+    -ms-transform: translate($horiz, $vert);
+    transform: translate($horiz, $vert);
+}
+
+@mixin transition($props) {
+    -webkit-transition: $props;
+    -moz-transition: $props;
+    -o-transition: $props;
+    transition: $props;
+}
+
+@function translate-cards($card-index) {
+    @return $card-index * -50px;
+}
+
 $name-font: 'Cherry Swash',
 cursive;
 $par-font: 'Josefin Slab',
@@ -92,24 +111,6 @@ body {
 }
 
 
-/*Gallery*/
-
-.galleria {
-    width: 100%;
-    height: 350px;
-    background: #000;
-}
-
-.gal-instance {
-    margin-left: 5.5%;
-}
-
-.gal-title {
-    font-family: $title-font;
-    text-align: center;
-}
-
-
 /*Home*/
 
 .name-box {
@@ -132,10 +133,50 @@ body {
     padding-top: 75px;
 }
 
-.hero {
+.hero
+ {
     height: 100%;
     background: url(../img/hero.jpg) no-repeat center center;
     @include bg-size(cover);
+}
+
+.news-cards {
+    position: relative;
+    @for $i from 0 through 4 {
+        .news-card-#{$i} {
+            position: absolute;
+            top: $i * 50px;
+            // white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            z-index: $i;
+            height: 200px;
+            width: 100%;
+            display: block;
+            @include transition(1s ease-in-out);
+        }
+        &:hover > .news-card-#{$i} {
+            @include translate(0, $i * 175px);
+        }
+    }
+}
+
+
+/*Gallery*/
+
+.galleria {
+    width: 100%;
+    height: 350px;
+    background: #000;
+}
+
+.gal-instance {
+    margin-left: 5.5%;
+}
+
+.gal-title {
+    font-family: $title-font;
+    text-align: center;
 }
 
 
@@ -186,10 +227,19 @@ body {
     }
 }
 
-.social ul {}
 
-.social ul li {}
+/* Resume */
 
-.social i {}
+#headshot {
+    background: url(../img/hero.jpg) no-repeat center center;
+    padding-top: 10rem;
+    width: 100%
+}
 
-.social i:hover {}
+.pdfobject {
+    // border: 1px solid #666;
+    width: 80%;
+    &-container {
+        height: 100vh;
+    }
+}
