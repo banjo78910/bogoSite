@@ -70,20 +70,25 @@ body {
   .name-box .name {
     font-family: "Cherry Swash", cursive;
     font-size: 5rem; }
-  .name-box .byline {
+  .name-box .byline,
+  .name-box .news-title {
     font-family: "Flamenco", cursive;
     font-size: 2rem; }
 
 .hero {
   height: 100%;
-  background: url(../img/hero.jpg) no-repeat center center;
+  background-image: url(../img/hero2.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 25%;
+  background-color: #0E0E0F;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
 
 .news-cards {
-  position: relative; }
+  position: relative;
+  top: 125px; }
   .news-cards .news-card-0 {
     position: absolute;
     top: 0px;
@@ -97,12 +102,12 @@ body {
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
     transition: 1s ease-in-out; }
-  .news-cards:hover > .news-card-0 {
-    -webkit-transform: translate(0, 0px);
-    -moz-transform: translate(0, 0px);
-    -o-transform: translate(0, 0px);
-    -ms-transform: translate(0, 0px);
-    transform: translate(0, 0px); }
+    .news-cards .news-card-0:hover {
+      -webkit-transform: translate(0, -150px);
+      -moz-transform: translate(0, -150px);
+      -o-transform: translate(0, -150px);
+      -ms-transform: translate(0, -150px);
+      transform: translate(0, -150px); }
   .news-cards .news-card-1 {
     position: absolute;
     top: 50px;
@@ -116,12 +121,12 @@ body {
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
     transition: 1s ease-in-out; }
-  .news-cards:hover > .news-card-1 {
-    -webkit-transform: translate(0, 175px);
-    -moz-transform: translate(0, 175px);
-    -o-transform: translate(0, 175px);
-    -ms-transform: translate(0, 175px);
-    transform: translate(0, 175px); }
+    .news-cards .news-card-1:hover {
+      -webkit-transform: translate(0, -200px);
+      -moz-transform: translate(0, -200px);
+      -o-transform: translate(0, -200px);
+      -ms-transform: translate(0, -200px);
+      transform: translate(0, -200px); }
   .news-cards .news-card-2 {
     position: absolute;
     top: 100px;
@@ -135,12 +140,12 @@ body {
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
     transition: 1s ease-in-out; }
-  .news-cards:hover > .news-card-2 {
-    -webkit-transform: translate(0, 350px);
-    -moz-transform: translate(0, 350px);
-    -o-transform: translate(0, 350px);
-    -ms-transform: translate(0, 350px);
-    transform: translate(0, 350px); }
+    .news-cards .news-card-2:hover {
+      -webkit-transform: translate(0, -250px);
+      -moz-transform: translate(0, -250px);
+      -o-transform: translate(0, -250px);
+      -ms-transform: translate(0, -250px);
+      transform: translate(0, -250px); }
   .news-cards .news-card-3 {
     position: absolute;
     top: 150px;
@@ -154,12 +159,12 @@ body {
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
     transition: 1s ease-in-out; }
-  .news-cards:hover > .news-card-3 {
-    -webkit-transform: translate(0, 525px);
-    -moz-transform: translate(0, 525px);
-    -o-transform: translate(0, 525px);
-    -ms-transform: translate(0, 525px);
-    transform: translate(0, 525px); }
+    .news-cards .news-card-3:hover {
+      -webkit-transform: translate(0, -300px);
+      -moz-transform: translate(0, -300px);
+      -o-transform: translate(0, -300px);
+      -ms-transform: translate(0, -300px);
+      transform: translate(0, -300px); }
   .news-cards .news-card-4 {
     position: absolute;
     top: 200px;
@@ -173,12 +178,18 @@ body {
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
     transition: 1s ease-in-out; }
-  .news-cards:hover > .news-card-4 {
-    -webkit-transform: translate(0, 700px);
-    -moz-transform: translate(0, 700px);
-    -o-transform: translate(0, 700px);
-    -ms-transform: translate(0, 700px);
-    transform: translate(0, 700px); }
+    .news-cards .news-card-4:hover {
+      -webkit-transform: translate(0, -350px);
+      -moz-transform: translate(0, -350px);
+      -o-transform: translate(0, -350px);
+      -ms-transform: translate(0, -350px);
+      transform: translate(0, -350px); }
+
+.news-card-date {
+  float: right; }
+
+.news-card h3 {
+  display: inline-block; }
 
 /*Gallery*/
 .galleria {
@@ -240,7 +251,7 @@ body {
 
 /* Resume */
 #headshot {
-  background: url(../img/hero.jpg) no-repeat center center;
+  background: url(../img/hero2.jpg) no-repeat center center;
   padding-top: 10rem;
   width: 100%; }
 

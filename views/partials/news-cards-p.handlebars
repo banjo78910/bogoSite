@@ -2,10 +2,10 @@
     {{#each items}}
         <div class="news-card news-card-{{@index}} panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">{{headline}}</h3>
+                <h3 class="panel-title"><span class="news-card-head">{{headline}}</span></h3><span class="news-card-date">{{date}}</span>
             </div>
             <div class="panel-body">{{content}}</div>
-            <a href="#" title="read more" class="readmore"> Read more »</a>
+            <a href="{{url}}" title="read more" class="readmore"> Read more »</a>
         </div>
     {{/each}}
 </div>

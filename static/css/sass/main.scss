@@ -53,6 +53,8 @@ $color in $color-map {
     }
 }
 
+$body-bg: #0E0E0F;
+$hero-photo: url(../img/hero2.jpg);
 
 /* Site */
 
@@ -120,7 +122,8 @@ body {
             size: 5rem;
         }
     }
-    .byline {
+    .byline,
+    .news-title {
         font: {
             family: $title-font;
             size: 2rem;
@@ -133,15 +136,21 @@ body {
     padding-top: 75px;
 }
 
-.hero
- {
+.hero {
     height: 100%;
-    background: url(../img/hero.jpg) no-repeat center center;
+    background: {
+        image: $hero-photo;
+        repeat: no-repeat;
+        position: 0 25%;
+        color: $body-bg;
+    }
+    // no-repeat center center;
     @include bg-size(cover);
 }
 
 .news-cards {
     position: relative;
+    top: 125px;
     @for $i from 0 through 4 {
         .news-card-#{$i} {
             position: absolute;
@@ -154,11 +163,19 @@ body {
             width: 100%;
             display: block;
             @include transition(1s ease-in-out);
-        }
-        &:hover > .news-card-#{$i} {
-            @include translate(0, $i * 175px);
+            &:hover {
+                @include translate(0, -150px - ($i * 50px));
+            }
         }
     }
+}
+
+.news-card-date {
+    float: right;
+}
+
+.news-card h3 {
+    display: inline-block;
 }
 
 
@@ -231,7 +248,7 @@ body {
 /* Resume */
 
 #headshot {
-    background: url(../img/hero.jpg) no-repeat center center;
+    background: $hero-photo no-repeat center center;
     padding-top: 10rem;
     width: 100%
 }

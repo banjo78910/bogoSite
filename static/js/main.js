@@ -15,11 +15,15 @@ $(document).ready(function() {
         interval: 5000,
     });
 
-    $('.news-card').dotdotdot({
-        ellipsis: '...',
-        wrap: 'word',
-        after: 'a.readmore',
+    if ($(document).dotdotdot) {
+        $('.news-card').dotdotdot({
+            ellipsis: '...',
+            wrap: 'word',
+            after: 'a.readmore',
+            fallbackToLetter: true,
+            watch: window,
 
-    })
+        });
+    }
 
 });
