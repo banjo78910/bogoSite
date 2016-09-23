@@ -54,6 +54,8 @@ $color in $color-map {
 }
 
 $body-bg: #0E0E0F;
+$white: #FFFFFF;
+$black: #000000;
 $hero-photo: url(../img/hero2.jpg);
 
 /* Site */
@@ -66,18 +68,24 @@ $hero-photo: url(../img/hero2.jpg);
     height: 25px;
 }
 
-.body-panel {
-    width: 60%;
-}
-
 .content-text {
     font-family: $par-font;
     text-align: center;
 }
 
+.page-title {
+    text-align: center;
+    color: $white;
+    font: {
+        family: $title-font;
+        size: 3rem;
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
+    background-color: $body-bg;
 }
 
 
@@ -86,7 +94,7 @@ body {
 .navbar {
     position: relative;
     width: 100%;
-    color: black;
+    color: $black;
     border: none;
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -99,7 +107,7 @@ body {
         color: #000;
     }
     .nav > li > a {
-        color: #FFF;
+        color: $white;
         padding-top: 5px;
         padding-bottom: 5px;
         &:hover {
@@ -109,7 +117,7 @@ body {
 }
 
 .navbar-brand {
-    color: #FFF;
+    color: $white;
 }
 
 
@@ -122,17 +130,15 @@ body {
             size: 5rem;
         }
     }
-    .byline,
-    .news-title {
+    .byline {
         font: {
             family: $title-font;
             size: 2rem;
         }
     }
-    font-family: 'Zapfino';
     font-size: 5rem;
     text-align: center;
-    color: #FFF;
+    color: $white;
     padding-top: 75px;
 }
 
@@ -148,23 +154,35 @@ body {
     @include bg-size(cover);
 }
 
-.news-cards {
-    position: relative;
+.news-cards-cont {
     top: 125px;
-    @for $i from 0 through 4 {
-        .news-card-#{$i} {
-            position: absolute;
-            top: $i * 50px;
-            // white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            z-index: $i;
-            height: 200px;
-            width: 100%;
-            display: block;
-            @include transition(1s ease-in-out);
-            &:hover {
-                @include translate(0, -150px - ($i * 50px));
+    .news-cards-title {
+        color: $white;
+        font-family: $title-font;
+        display: block;
+        font-size: 3rem;
+        text-align: center;
+    }
+    .news-cards {
+        position: relative;
+        .news-card-head {
+            font-family: $title-font;
+        }
+        @for $i from 0 through 4 {
+            .news-card-#{$i} {
+                position: absolute;
+                font-family: $par-font;
+                top: $i * 50px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                z-index: $i;
+                height: 200px;
+                width: 100%;
+                display: block;
+                @include transition(1s ease-in-out);
+                &:hover {
+                    @include translate(0, -150px - ($i * 50px));
+                }
             }
         }
     }
@@ -225,7 +243,7 @@ body {
     i {
         width: 40px;
         height: 40px;
-        color: #FFF;
+        color: $white;
         background-color: #909AA0;
         font-size: 22px;
         text-align: center;
@@ -233,7 +251,7 @@ body {
         @include transition(all ease 0.3s);
         @include border-radius(50%);
         &:hover {
-            color: #FFF;
+            color: $white;
             text-decoration: none;
             @include transition(all ease 0.3s);
         }
@@ -248,9 +266,9 @@ body {
 /* Resume */
 
 #headshot {
-    background: $hero-photo no-repeat center center;
-    padding-top: 10rem;
-    width: 100%
+    // background: no-repeat center center;
+    // padding-top: 10rem;
+    // width: 100%
 }
 
 .pdfobject {
@@ -259,4 +277,15 @@ body {
     &-container {
         height: 100vh;
     }
+}
+
+
+/* news */
+
+.news-item-date {
+    float: right;
+}
+
+.news-item h3 {
+    display: inline-block;
 }

@@ -1,21 +1,22 @@
 {
-    "items": [ {
+    "items": [{
         "headline": "Sara is So Great",
         "content": "San Francisco garage wristwatch lights construct shanty town city drone. Kowloon dolphin nodality wonton soup paranoid tanto marketing. Monofilament uplink dissident chrome cartel Legba nano-industrial grade advert realism bicycle futurity.-space euro-pop weathered sub-orbital alcohol range-rover franchise. Footage beef noodles smart-marketing camera A.I. stimulate. Hacker disposable drugs pen order-flow bridge paranoid boy sentient. 8-bit construct kanji disposable neon cardboard assassin advert military-grade plastic meta-human man dolphin. ",
         "displayOnHome": true,
         "date": "October 1",
-        "url": ""
+        "url": "/News"
     }, {
         "headline": "Sara is So Great",
         "content": "San Francisco garage wristwatch lights construct shanty town city drone. Kowloon dolphin nodality wonton soup paranoid tanto marketing. Monofilament uplink dissident chrome cartel Legba nano-industrial grade advert realism bicycle futurity.-space euro-pop weathered sub-orbital alcohol range-rover franchise. Footage beef noodles smart-marketing camera A.I. stimulate. Hacker disposable drugs pen order-flow bridge paranoid boy sentient. 8-bit construct kanji disposable neon cardboard assassin advert military-grade plastic meta-human man dolphin. ",
         "displayOnHome": true,
         "date": "June 3",
-        "url": ""
+        "url": "/News"
     }, {
         "headline": "Sara is So Great",
         "content": "San Francisco garage wristwatch lights construct shanty town city drone. Kowloon dolphin nodality wonton soup paranoid tanto marketing. Monofilament uplink dissident chrome cartel Legba nano-industrial grade advert realism bicycle futurity.-space euro-pop weathered sub-orbital alcohol range-rover franchise. Footage beef noodles smart-marketing camera A.I. stimulate. Hacker disposable drugs pen order-flow bridge paranoid boy sentient. 8-bit construct kanji disposable neon cardboard assassin advert military-grade plastic meta-human man dolphin. ",
         "displayOnHome": true,
         "date": "January 16",
-        "url": ""
-    } ]
+        "url": "/News"
+    }],
+    "page-title": "Sara in the News"
 }

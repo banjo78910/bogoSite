@@ -1,3 +1,10 @@
-<div class="col-md-3 col-md-offset-1">
-    News Coming soon!</div>
+<div class="news-item row col-md-10 col-md-offset-1">
+    {{#each items}}
+        <div class="news-item news-item-{{@index}} panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="news-item-head">{{headline}}</span></h3><span class="news-item-date">{{date}}</span>
+            </div>
+            <div class="panel-body">{{content}}</div>
+        </div>
+    {{/each}}
 </div>
